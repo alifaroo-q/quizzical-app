@@ -1,0 +1,10 @@
+.btn-again {
+    background: #4D5B9E;
+    width: 193px;
+    height: 52px;
+    color: #F5F7FB;
+}
+
+.btn-again:active {
+    transform: scale(1.05);
+}

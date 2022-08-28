@@ -1,0 +1,9 @@
+.btn-answer {
+    background: transparent;
+    color: #4D5B9E;
+    border: 1px solid #4D5B9E
+}
+
+.btn-answer:active {
+    transform: scale(1.05);
+}

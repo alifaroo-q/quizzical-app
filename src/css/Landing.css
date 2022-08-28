@@ -1,0 +1,14 @@
+.app-name {
+    color: #293264;
+}
+
+.btn-start {
+    background: #4D5B9E;
+    width: 193px;
+    height: 52px;
+    color: #F5F7FB;
+}
+
+.btn-start:active {
+    transform: scale(1.05);
+}
