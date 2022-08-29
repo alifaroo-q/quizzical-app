@@ -43,8 +43,8 @@ export default function Question({question, choice, check, setScore}) {
 
     return (
         <article className="question mb-5">
-            <h1 className="text-2xl max-w-3xl font-bold">{He.decode(question)}</h1>
-            <div className="btn-container flex flex-row justify-evenly mt-5">
+            <h1 className="sm:text-2xl text-xl sm:p-2 p-3 max-w-3xl font-bold flex-wrap">{He.decode(question)}</h1>
+            <div className="btn-container sm:flex sm:flex-row justify-center sm:mt-5 mt-2 ">
                 {optionButtons}
             </div>
             <hr className="mt-5"/>

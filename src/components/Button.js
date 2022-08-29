@@ -42,21 +42,21 @@ export default function Button({id, option, isCorrect, selectedOption, handleGet
             stylesToApply = correctStyles
         }
     } else {
-       if (selectedOption.id === id) {
-           stylesToApply = selectedStyles
-       } else {
-           stylesToApply = nothingSelectedStyles
-       }
+        if (selectedOption.id === id) {
+            stylesToApply = selectedStyles
+        } else {
+            stylesToApply = nothingSelectedStyles
+        }
     }
 
     return (
         <button
             disabled={check}
-            onClick={() => handleGetSelectedOption( {id: id, isCorrect: isCorrect} )}
+            onClick={() => handleGetSelectedOption({id: id, isCorrect: isCorrect})}
             style={stylesToApply}
             name={id}
             value={option}
-            className="btn-answer px-3 py-1 rounded-2xl shadow-2xl transition-all text-lg font-bold max-w-prose mx-2">
+            className="btn-answer sm:px-3 px-1 py-1 rounded-2xl shadow-2xl transition-all text-sm sm:text-lg font-bold max-w-prose mx-1 my-1">
             {He.decode(option)}
         </button>
     )

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import "../css/Quiz.css"
 import Question from "./Question";
 import Loading from "./Loading";
@@ -6,11 +6,11 @@ import {nanoid} from "nanoid";
 
 export default function Quiz() {
 
-    const [questions, setQuestions] = React.useState(() => [])
-    const [loading, setLoading] = React.useState(() => true)
+    const [questions, setQuestions] = useState(() => [])
+    const [loading, setLoading] = useState(() => true)
     const [reset, setReset] = useState(false)
 
-    const [score, setScore] = React.useState(() => 0)
+    const [score, setScore] = useState(() => 0)
 
     const [check, setCheck] = useState(false)
 
@@ -25,7 +25,7 @@ export default function Quiz() {
         )
     })
 
-    React.useEffect(() => {
+    useEffect(() => {
         setLoading(true)
 
         fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple")
@@ -69,7 +69,8 @@ export default function Quiz() {
                 setScore(0)
 
             })
-            .catch((error) => {})
+            .catch((error) => {
+            })
 
     }, [reset])
 
@@ -89,15 +90,15 @@ export default function Quiz() {
                                 ?
                                 <button
                                     onClick={() => setCheck(true)}
-                                    className="btn-check rounded-2xl shadow-2xl transition-all mt-8">
+                                    className="btn-check rounded-2xl shadow-2xl transition-all sm:mt-8 mt-1 mb-3">
                                     Check answers
                                 </button>
                                 :
-                                <div className="flex justify-center items-center content-center">
-                                    <p className="text-xl">You scored {score}/{questions.length}</p>
+                                <div className="sm:flex  sm:justify-center sm:items-center sm:content-center">
+                                    <p className="text-xl text-center">You scored {score}/{questions.length}</p>
                                     <button
                                         onClick={() => setReset(true)}
-                                        className="btn-check rounded-2xl shadow-2xl transition-all mx-5">
+                                        className="btn-check rounded-2xl shadow-2xl transition-all mx-5 my-2">
                                         Play again
                                     </button>
                                 </div>
